@@ -11,7 +11,7 @@ class TextType(Enum):
     IMAGE_ALT_TEXT = 8
 
 class TextNode:
-    def __init__(self, text: str, text_type: TextType = TextType.PLAIN, url: str = None):
+    def __init__(self, text: str, text_type: TextType = TextType.PLAIN, url: str | None = None):
         self.text = text
         self.text_type = text_type
         self.url = url  # For ANCHOR type
