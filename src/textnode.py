@@ -8,7 +8,7 @@ class TextType(Enum):
     STRIKETHROUGH = 5
     CODE = 6
     ANCHOR = 7
-    IMAGE_ALT_TEXT = 8
+    IMAGE = 8
 
 class TextNode:
     def __init__(self, text: str, text_type: TextType = TextType.PLAIN, url: str | None = None):

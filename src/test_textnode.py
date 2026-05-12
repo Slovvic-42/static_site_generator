@@ -29,5 +29,10 @@ class TestTextNode(unittest.TestCase):
         node2 = TextNode("Click here", TextType.ANCHOR)
         self.assertNotEqual(node, node2)
 
+    def test_image_repr(self):
+        node = TextNode("An image", TextType.IMAGE)
+        expected_repr = "TextNode(An image, 8, None)"
+        self.assertEqual(repr(node), expected_repr)
+
 if __name__ == "__main__":
     unittest.main()
