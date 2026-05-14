@@ -1,11 +1,11 @@
-from node_conversion import text_node_to_html_node
+from node_functions import text_node_to_html_node
 from textnode import TextNode, TextType
 from htmlnode import LeafNode
 import unittest 
 
 class TestNodeConversion(unittest.TestCase):
-    def test_plain_to_html(self):
-        text_node = TextNode("Hello, world!", TextType.PLAIN)
+    def test_text_to_html(self):
+        text_node = TextNode("Hello, world!", TextType.TEXT)
         html_node = text_node_to_html_node(text_node)
         expected_html_node = LeafNode(tag=None, value="Hello, world!")
         self.assertEqual(html_node, expected_html_node)
@@ -17,7 +17,7 @@ class TestNodeConversion(unittest.TestCase):
         self.assertEqual(html_node, expected_html_node)
 
     def test_anchor_to_html(self):
-        text_node = TextNode("Click here", TextType.ANCHOR, url="https://example.com")
+        text_node = TextNode("Click here", TextType.LINK, url="https://example.com")
         html_node = text_node_to_html_node(text_node)
         expected_html_node = LeafNode(tag="a", value="Click here", props={"href": "https://example.com"})
         self.assertEqual(html_node, expected_html_node)

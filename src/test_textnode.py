@@ -15,23 +15,23 @@ class TestTextNode(unittest.TestCase):
         self.assertNotEqual(node, node2)
 
     def test_url_eq(self):
-        node = TextNode("Click here", TextType.ANCHOR, url="https://example.com")
-        node2 = TextNode("Click here", TextType.ANCHOR, url="https://example.com")
+        node = TextNode("Click here", TextType.LINK, url="https://example.com")
+        node2 = TextNode("Click here", TextType.LINK, url="https://example.com")
         self.assertEqual(node, node2)
 
     def test_url_neq(self):
-        node = TextNode("Click here", TextType.ANCHOR, url="https://example.com")
-        node2 = TextNode("Click here", TextType.ANCHOR, url="https://example.org")
+        node = TextNode("Click here", TextType.LINK, url="https://example.com")
+        node2 = TextNode("Click here", TextType.LINK, url="https://example.org")
         self.assertNotEqual(node, node2)
 
     def test_none_url_eq(self):
-        node = TextNode("Click here", TextType.ANCHOR, url="https://example.com")
-        node2 = TextNode("Click here", TextType.ANCHOR)
+        node = TextNode("Click here", TextType.LINK, url="https://example.com")
+        node2 = TextNode("Click here", TextType.LINK)
         self.assertNotEqual(node, node2)
 
     def test_image_repr(self):
         node = TextNode("An image", TextType.IMAGE)
-        expected_repr = "TextNode(An image, 8, None)"
+        expected_repr = "TextNode(An image, image, None)"
         self.assertEqual(repr(node), expected_repr)
 
 if __name__ == "__main__":
