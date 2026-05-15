@@ -1,5 +1,6 @@
-from node_functions import split_nodes_delimiter, extract_markdown_images, extract_markdown_links, split_nodes_image, split_nodes_link
+from node_functions import split_nodes_delimiter, extract_markdown_images, extract_markdown_links, split_nodes_image, split_nodes_link, text_to_textnodes
 from textnode import TextNode, TextType
+from htmlnode import HTMLNode, LeafNode, ParentNode
 import unittest
 
 class TestNodeFunctions(unittest.TestCase):
